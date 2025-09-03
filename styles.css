@@ -201,14 +201,20 @@ body {
   border-radius: 16px;
   border: 1px solid #e5e7eb;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* jadi vertikal */
+  gap: 16px; /* spasi antar elemen */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   display: none;
 }
 
 .download-section.visible {
   display: flex;
+}
+
+.download-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .file-preview {
@@ -353,5 +359,49 @@ body {
   .upload-btn {
     max-width: none;
     width: 100%;
+  }
+}
+.browser-notice {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.browser-notice p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .browser-notice {
+    padding: 12px 16px;
+  }
+
+  .browser-notice p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .download-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .download-btn {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .file-preview {
+    justify-content: center;
   }
 }
