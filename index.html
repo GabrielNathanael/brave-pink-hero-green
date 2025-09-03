@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brave Pink Hero Green</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="app-title">Brave Pink Hero Green
+            </h1>
+            <p class="app-description">Turn your photo into a symbol of courage and hope. Apply the iconic pink & green
+                duotone effect — inspired by Indonesia’s movement for solidarity and change.
+            </p>
+            <p class="privacy-note">All processing happens in your browser no uploads, no storage.</p>
+        </header>
+
+
+        <section class="upload-section" id="uploadZone">
+            <input type="file" id="fileInput" class="file-input" accept="image/*">
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                Select Photo
+            </button>
+            <p class="upload-hint">Drop your image here or click to browse</p>
+        </section>
+
+        <section class="settings-panel">
+            <div class="setting-card">
+                <div class="setting-header">
+                    <span class="setting-name">Effect Strength</span>
+                    <span class="setting-value" id="intensityDisplay">70%</span>
+                </div>
+                <input type="range" id="intensityRange" class="range-input" min="0" max="100" value="70">
+            </div>
+            <div class="setting-card">
+                <div class="setting-header">
+                    <span class="setting-name">Contrast Level</span>
+                    <span class="setting-value" id="contrastDisplay">110%</span>
+                </div>
+                <input type="range" id="contrastRange" class="range-input" min="50" max="200" value="110">
+            </div>
+            <div class="setting-card">
+                <div class="setting-header">
+                    <span class="setting-name">Brightness</span>
+                    <span class="setting-value" id="brightnessDisplay">100%</span>
+                </div>
+                <input type="range" id="brightnessRange" class="range-input" min="50" max="150" value="100">
+            </div>
+        </section>
+
+        <div class="loading-state" id="loadingState">
+            <div class="loading-spinner"></div>
+            <p>Applying duotone effect...</p>
+        </div>
+
+        <section class="preview-area" id="previewArea">
+            <div class="image-comparison">
+                <div class="image-card">
+                    <div class="image-label">Original Photo</div>
+                    <img id="originalImage" class="image-preview" alt="Original">
+                </div>
+                <div class="image-card">
+                    <div class="image-label">DuoTone Result</div>
+                    <canvas id="processedCanvas" class="image-preview"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-section" id="downloadSection">
+            <div class="file-preview">
+                <div class="file-icon">PNG</div>
+                <div class="file-info">
+                    <h4 id="outputFileName">photo-duotone.png</h4>
+                    <p id="outputFileSize">Ready for download</p>
+                </div>
+            </div>
+            <button class="download-btn" id="downloadButton" disabled>
+                Download PNG
+            </button>
+        </section>
+
+        <footer class="footer-note">
+            <p>Complete privacy guaranteed: Your photos are processed entirely within your browser. No images are
+                uploaded, transmitted, or stored on any server.</p>
+            <div class="copyright">
+                Â© 2025 All rights reserved. Created by <a href="https://github.com/GabrielNathanael" target="_blank"
+                    rel="noopener noreferrer">Gabriel Nathanael</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
